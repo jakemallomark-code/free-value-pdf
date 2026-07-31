@@ -43,7 +43,7 @@
             color: #d1d5db;
         }
 
-        button {
+        button, .option {
             padding: 18px 40px;
             font-size: 22px;
             border: none;
@@ -55,7 +55,7 @@
             transition: 0.3s;
         }
 
-        button:hover {
+        button:hover, .option:hover {
             transform: scale(1.05);
         }
 
@@ -95,10 +95,15 @@
             border-radius: 8px;
             font-size: 18px;
             cursor: pointer;
+            text-decoration: none; /* Keeps layout clean for links */
         }
 
-        .close {
+        .popup button.close {
             background: #ef4444;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px;
+            width: 100%;
         }
     </style>
 </head>
@@ -114,17 +119,21 @@
     <div class="modal" id="popup">
         <div class="popup">
             <h2>Select Your Free Guide</h2>
-            <button class="option" onclick="downloadGuide('health.pdf')">❤️ Health</button>
-            <button class="option" onclick="downloadGuide('wealth.pdf')">💰 Wealth</button>
-            <button class="option" onclick="downloadGuide('relationship.pdf')">💕 Relationship</button>
-            <button class="option close" onclick="closePopup()">Close</button>
+            
+            <!-- Direct MediaFire Download Links -->
+            <a href="https://mediafire.com" target="_blank" class="option">❤️ Health</a>
+            <a href="https://mediafire.com" target="_blank" class="option">💰 Wealth</a>
+            <a href="https://mediafire.com" target="_blank" class="option">💕 Relationship</a>
+            
+            <button class="close" onclick="closePopup()">Close</button>
         </div>
     </div>
 
     <!-- Monetag Ad Scripts -->
-    <script>(function(s){s.dataset.zone='11470737',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <script>(function(s){s.dataset.zone='11470751',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>(function(s){s.dataset.zone='11470737',s.src='https://nap5k.com'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>(function(s){s.dataset.zone='11470751',s.src='https://n6wxm.com'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
+    <!-- Modal Functionality Script -->
     <script>
         function openPopup() {
             document.getElementById("popup").style.display = "flex";
@@ -132,10 +141,6 @@
 
         function closePopup() {
             document.getElementById("popup").style.display = "none";
-        }
-
-        function downloadGuide(file) {
-            window.location.href = file;
         }
     </script>
 </body>
