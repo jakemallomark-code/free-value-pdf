@@ -8,10 +8,6 @@
     <!-- Monetag Site Verification Tag -->
     <meta name="monetag" content="850cbdccbd02f73e06628e6c50d5f399">
 
-    <!-- Monetag Ad Scripts (Moved to Head for Early Initialization) -->
-    <script>(function(s){s.dataset.zone='11470737',s.src='https://nap5k.com'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <script>(function(s){s.dataset.zone='11470751',s.src='https://n6wxm.com'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
     <style>
         * {
             margin: 0;
@@ -47,7 +43,7 @@
             color: #d1d5db;
         }
 
-        button, .option {
+        button {
             padding: 18px 40px;
             font-size: 22px;
             border: none;
@@ -59,7 +55,7 @@
             transition: 0.3s;
         }
 
-        button:hover, .option:hover {
+        button:hover {
             transform: scale(1.05);
         }
 
@@ -99,15 +95,10 @@
             border-radius: 8px;
             font-size: 18px;
             cursor: pointer;
-            text-decoration: none;
         }
 
-        .popup button.close {
+        .close {
             background: #ef4444;
-            padding: 15px;
-            font-size: 18px;
-            border-radius: 8px;
-            width: 100%;
         }
     </style>
 </head>
@@ -123,17 +114,17 @@
     <div class="modal" id="popup">
         <div class="popup">
             <h2>Select Your Free Guide</h2>
-            
-            <!-- Direct MediaFire Download Links -->
-            <a href="https://mediafire.com" target="_blank" class="option">❤️ Health</a>
-            <a href="https://mediafire.com" target="_blank" class="option">💰 Wealth</a>
-            <a href="https://mediafire.com" target="_blank" class="option">💕 Relationship</a>
-            
-            <button class="close" onclick="closePopup()">Close</button>
+            <button class="option" onclick="downloadGuide('https://mediafire.com')">❤️ Health</button>
+            <button class="option" onclick="downloadGuide('https://mediafire.com')">💰 Wealth</button>
+            <button class="option" onclick="downloadGuide('https://mediafire.com')">💕 Relationship</button>
+            <button class="option close" onclick="closePopup()">Close</button>
         </div>
     </div>
 
-    <!-- Modal Functionality Script -->
+    <!-- Monetag Ad Scripts -->
+    <script>(function(s){s.dataset.zone='11470737',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>(function(s){s.dataset.zone='11470751',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
     <script>
         function openPopup() {
             document.getElementById("popup").style.display = "flex";
@@ -141,6 +132,10 @@
 
         function closePopup() {
             document.getElementById("popup").style.display = "none";
+        }
+
+        function downloadGuide(file) {
+            window.location.href = file;
         }
     </script>
 </body>
